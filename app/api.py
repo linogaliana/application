@@ -7,10 +7,11 @@ import pandas as pd
 model = load('model.joblib')
 
 app = FastAPI(
-    title="Prédiction de survie sur le Titanic",
+    title="Démonstration du modèle de prédiction de survie sur le Titanic",
     description=
-    "Application de prédiction de survie sur le Titanic 🚢 <br>Une version par API pour faciliter la réutilisation du modèle 🚀" +\
-        "<br><br><img src=\"https://media.vogue.fr/photos/5faac06d39c5194ff9752ec9/1:1/w_2404,h_2404,c_limit/076_CHL_126884.jpg\" width=\"200\">"
+    "<b>Application de prédiction de survie sur le Titanic</b> 🚢 <br>Une version par API pour faciliter la réutilisation du modèle 🚀" +\
+        "<br><br><img src=\"https://media.vogue.fr/photos/5faac06d39c5194ff9752ec9/1:1/w_2404,h_2404,c_limit/076_CHL_126884.jpg\" width=\"200\">" +\
+        "Cette application est une illustration pour le cours de mise en production de l'ENSAE"
     )
 
 
