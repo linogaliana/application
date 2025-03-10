@@ -27,6 +27,12 @@ parser.add_argument(
     "--n_trees", type=int, default=20, help="Nombre d'arbres"
 )
 parser.add_argument(
+    "--max_features",
+    type=str, default="sqrt",
+    choices=['sqrt', 'log2'],
+    help="Number of features to consider when looking for the best split"
+)
+parser.add_argument(
     "--experiment_name", type=str, default="titanicml", help="MLFlow experiment name"
 )
 args = parser.parse_args()
