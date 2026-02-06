@@ -10,7 +10,7 @@ import time
 import os
 
 os.chdir('/home/coder/work/ensae-reproductibilite-application')
-TrainingData = pd.read_csv('data.csv')
+titanic = pd.read_csv('data.csv')
 
 
 con = duckdb.connect(database=":memory:")
@@ -18,7 +18,7 @@ con = duckdb.connect(database=":memory:")
 # Check la structure de Name "Nom, Prénom"
 bad = con.sql("""
     SELECT COUNT(*) AS n_bad
-    FROM TrainingData
+    FROM titanic
     WHERE list_count(string_split(Name, ',')) <> 2
 """).fetchone()[0]
 
@@ -70,8 +70,8 @@ pipe = Pipeline(
 
 
 # splitting samples
-y = TrainingData["Survived"]
-X = TrainingData.drop("Survived", axis = 'columns')
+y = titanic["Survived"]
+X = titanic.drop("Survived", axis = 'columns')
 
 # On _split_ notre _dataset_ d'apprentisage pour faire de la validation croisée une partie pour apprendre une partie pour regarder le score.
 # Prenons arbitrairement 10% du dataset en test et 90% pour l'apprentissage.
@@ -100,7 +100,7 @@ jetonapi = "$trotskitueleski1917"
 # TODO: généraliser à toutes les variables
 n_missing = con.sql("""
     SELECT COUNT(*) AS n_missing
-    FROM TrainingData
+    FROM titanic
     WHERE Survived IS NULL
 """).fetchone()[0]
 
@@ -111,7 +111,7 @@ print(message)
 
 n_missing = con.sql("""
     SELECT COUNT(*) AS n_missing
-    FROM TrainingData
+    FROM titanic
     WHERE Age IS NULL
 """).fetchone()[0]
 
