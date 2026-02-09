@@ -24,6 +24,8 @@ jobs:
           uv sync
       - name: Lint
         run: |
+          uv add pylint
+          uv sync
           pylint src --fail-under=6
       - name: Test Python code
-        run: python main.py
+        run: uv run main.py
