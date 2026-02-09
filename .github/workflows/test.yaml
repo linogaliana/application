@@ -24,7 +24,7 @@ jobs:
           uv sync
       - name: Test code quality & unit tests
         run: |
-          uv add pylint unittest
+          uv add pylint
           uv sync
           uv run pylint src --fail-under=5
           uv run unittest -v tests/test_check.py
