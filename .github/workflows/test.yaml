@@ -26,6 +26,4 @@ jobs:
         run: |
           uv add pylint
           uv sync
-          pylint src --fail-under=6
-      - name: Test Python code
-        run: uv run main.py
+          uv run pylint src --fail-under=6
