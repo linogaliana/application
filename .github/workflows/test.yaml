@@ -27,4 +27,4 @@ jobs:
           uv add pylint
           uv sync
           uv run pylint src --fail-under=5
-          uv run unittest -v tests/test_check.py
+          python -m unittest -v tests/test_check.py
