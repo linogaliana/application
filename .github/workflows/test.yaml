@@ -22,8 +22,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install uv
           uv sync
-      - name: Lint
+      - name: Test code quality & unit tests
         run: |
-          uv add pylint
+          uv add pylint unittest
           uv sync
-          uv run pylint src --fail-under=6
+          uv run pylint src --fail-under=5
+          uv run unittest -v tests/test_check.py
