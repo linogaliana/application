@@ -103,3 +103,5 @@ async def predict(
     prediction = "Survived 🎉" if prediction == 1 else "Dead ⚰️"
 
     return prediction
+
+
