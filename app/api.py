@@ -18,15 +18,7 @@ logging.basicConfig(
 # Preload model -------------------
 
 logging.info(
-    f"Getting model from MLFlow instance {os.environ["MLFLOW_TRACKING_URI"]}"
-)
-
-logging.info(
-    f"MLFlow username: {os.environ["MLFLOW_TRACKING_USERNAME"]}"
-)
-
-logging.info(
-    f"MLFlow password: {os.environ["MLFLOW_TRACKING_PASSWORD"]}"
+    f"Getting model from MLFlow"
 )
 
 model_name = "production"
