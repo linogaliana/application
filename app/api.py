@@ -1,7 +1,6 @@
 """A simple API to expose our trained RandomForest model for Tutanic survival."""
 
 import logging
-import os
 from fastapi import FastAPI
 import pandas as pd
 import mlflow
@@ -18,7 +17,7 @@ logging.basicConfig(
 # Preload model -------------------
 
 logging.info(
-    f"Getting model from MLFlow"
+    "Getting model from MLFlow"
 )
 
 model_name = "production"
