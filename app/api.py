@@ -21,6 +21,14 @@ logging.info(
     f"Getting model from MLFlow instance {os.environ["MLFLOW_TRACKING_URI"]}"
 )
 
+logging.info(
+    f"MLFlow username: {os.environ["MLFLOW_TRACKING_USERNAME"]}"
+)
+
+logging.info(
+    f"MLFlow password: {os.environ["MLFLOW_TRACKING_PASSWORD"]}"
+)
+
 model_name = "production"
 model_version = "latest"
 
